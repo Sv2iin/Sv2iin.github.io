@@ -1,0 +1,243 @@
+Qst
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>title</title>
+
+  <!-- JQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ?></script>
+  <!-- 최신 자바스크립트 -->
+  <script src="js/bootstrap.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+</head>
+
+
+<style>
+  .nav {
+    padding-bottom: 50px;
+  }
+
+  .navcolor {
+    background-color: pink;
+    color: #ffffff;
+  }
+
+  .modal-body {
+    margin: 0 auto;
+  }
+
+  nav a:link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  nav a:visited {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  nav a:active {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+  }
+
+  .my-hr {
+    width: 40px;
+    border: solid 2px;
+    color: #2C3E50;
+  }
+
+  .card {
+    border: 0;
+    /* border-bottom:.25rem solid #2C3E50; */
+  }
+
+  header {
+    padding-top: 56px;
+  }
+
+  .carousel-inner>.carousel-item>img {
+    min-width: 100%;
+    min-height: 400px;
+  }
+
+  .Ans {
+    border-radius: 5px;
+    border: 1px solid pink;
+    padding: 5px;
+
+  .btn {
+    color : #e83e8c;
+  }
+  }
+</style>
+
+<body>
+
+  <!-- 상단 네비게이트 바 -->
+  <nav class="navcolor navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-black" href="#">TITLE</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold text-black rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarResponsive">
+        <ul class="navbar-nav ml-auto navbar-right">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="#app">App</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- 상단 네비게이트 바 끝 -->
+
+
+  <section height:500px>
+    <div class="container contentDiv text-center">
+      <h2 style="padding-top:125px;">어쩌구 어쩌구 테스트</h2>
+      <br>
+      <button type="button" class="btn btn-pink" id="start_btn" onclick=displayset()>START</button>
+
+      <ul id=question_details>
+        <li id='ff'>
+          <div>
+            <div class=Qst>어쩌구저쩌구웅앵</div></br>
+            <div class=Ans value="0">간이 커서 별로 걱정하지 않는다.</div>
+            <div class=Ans value="10">뭐가 잘못되지 않을지 계속 걱정한다.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>30분 일찍 면접 장소에 도착했습니다. 대기실에는 많은 면접자가 앉아 있는데, 시간을 확인해 보니, 아직 이릅니다. 이 때 당신은:</div></br>
+            <div class=Ans value=0>주변 사람들과 면접과 회사 상황에 대한 이야기를 한다.</div>
+            <div class=Ans value=10>조용한 곳을 찾아 휴식을 취하며 면접 준비를 한다.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>이 면접은그룹 면접이며, 6명의 면접자가 함께 하는 그룹 토론 방식입니다. 이 때 당신은:</div></br>
+            <div class=Ans value=0>다른 면접자들에게 겸손하고 예의 바르게 대하려 노력한다.</div>
+            <div class=Ans value=10>내 재능을 최대한 보여주며, 너무 겸손하거나 조심하려고 노력하지는 않는다.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>그룹 토론 형식의 면접이 끝난 후, 그 다음은 별도의 면접이 진행됩니다. 면접관은 당신이 잘하는 일이 무엇인지 묻습니다. 현실에서 당신은:</div></br>
+            <div class=Ans value=0>많은 기술이나 스킬을 공부했으며, 새로운 것을 배우기를 좋아한다.</div>
+            <div class=Ans value=10>할줄 아는 기술은 적지만 깊이 있게 배운다.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>면접관은 이어 좌절과 실패에 대해 어떻게 생각하는지 묻습니다. 당신이 여기서 어떻게 대답을 하든, 당신의 현실은:</div></br>
+            <div class=Ans value=0>잘 됐군! 경험치가 또 오르다니!</div>
+            <div class=Ans value=10>강한 좌절감과 함께 멘붕을 느낀다.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>면접관은 당신이 할 일은 많은 사람들과 접촉해야하는 일이라고 합니다. 당신의 생각은:</div></br>
+            <div class=Ans value=0>잘 됐군! 사람들과 접촉하고 왕래하는 것이야말로 내가 가장 좋아하는 일이다.</div>
+            <div class=Ans value=10>나는 혼자 일하기를 좋아한다. 이 일이 나와 잘 맞지 않겠다는 생각이 든다.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>사실 면접 결과가 어떻든 당신의 바램은:</div></br>
+            <div class=Ans value=0>템포가 좀 빠르고 동시에 많은 일을 처리하고 싶다.</div>
+            <div class=Ans value=10>업무가 단순하더라도 템포가 조금 느렸으면 좋겠다.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>면접이 끝난 후, 당신은 왠지 스스로가 면접에서 말을 잘 못한 것 같습니다. 이 때 당신의 생각은:</div></br>
+            <div class=Ans value=0>나는 아주 작고 평범한 사람이다.</div>
+            <div class=Ans value=10>나는 아주 특별하고 어딘가에 필요한 사람이다!</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>일요일 아침, 초대없이 당신 집에 쳐들어온 친구 A 때문에 잠에서 깹니다. A가 문을 열자마자 한다는 말이:</div></br>
+            <div class=Ans value=0>“집 청소 좀 하면서 살아라!”</div>
+            <div class=Ans value=10>“집 진짜 너무 깨끗한거 아니야? 시간 날때 우리집 와서 청소좀 해라!”</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class=Qst>A는 예전에 당신에게 부탁했던 자료를 달라고 합니다. 당신은:</div></br>
+            <div class=Ans value=0>자료를 건네주며：“일찍이 다 해놨지. 언제 가지러 오나 기다리고 있었네!”</div>
+            <div class=Ans value=10>미안한 얼굴로：“급한 건줄 몰랐지. 아직 못했어. 다음주 내로 꼭 줄께!”</div>
+          </div>
+        </li>
+        </ol>
+
+    </div>
+  </section>
+
+
+
+  </script>
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js">
+    < script src = "js/bootstrap.js" >
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+    var score = 0;
+    var page = 0;
+    $('#question_details').children().hide();
+
+    function displayset() {
+      $('#start_btn').hide();
+      $('#ff').show();
+    }
+
+    $('.Ans').click(function() {
+      var score0 = $(this).attr("value");
+      var score1 = Number(score0);
+      score += score1;
+      //alert("score : " + score);
+      if (page < 10) {
+        $(this).parent().parent().hide();
+        page++;
+      //  alert("page : " + page + "</br>" + "SCORE : " + score);
+        $(this).parent().parent().next().show();
+      }
+      if (page == 10) {
+
+        alert("끝." + score);
+
+        //
+
+      }
+    });
+  </script>
+
+</body>
+
+
+</html>
