@@ -231,8 +231,7 @@
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
   <script type="text/javascript">
     var score = 0;
     var page = 0;
@@ -246,8 +245,8 @@
     }
 
     function twitter(no) {
-      var text = "님의 어쩌고 결과는 " + score + "점 입니다. 친구들과 공유해보세요 ^~^!!";
-      var url = 'sv2iin.github.io?no=' + no; //show_detail.html
+      var text = "님의 어쩌고 테스트 결과는 " + score + "점 입니다. 친구들과 공유해보세요 ^~^!!";
+      var url = 'sv2iin.github.io?';
       var turl = "http://twitter.com/share?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text);
       window.open(turl, 'twitter', 'width=626,height=436');
     }
@@ -259,7 +258,7 @@
         content: {
           title: "함 해봐" // 콘텐츠의 타이틀
             ,
-          description: "해봐고" // 콘텐츠 상세설명
+          description: "해봐" // 콘텐츠 상세설명
             ,
           imageUrl: "boss2.jpg" // 썸네일 이미지
             ,
@@ -274,7 +273,7 @@
             ,
           commentCount: 120 // 댓글 개수
             ,
-          sharedCount: 1858821 // 공유 회수
+          sharedCount: 18521 // 공유 회수
         },
         buttons: [{
           title: "하러 가기!" // 버튼 제목
