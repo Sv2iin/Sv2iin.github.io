@@ -214,10 +214,14 @@
     </div>
 
     <div id="share">
-      <a href="#" onclick=twitter();>gg<img src="twitter.png"></a>
-      <a href="#" onclick="copyLink('sv2iin.github.io');">링크 복사<img src="urllink.jpg"></a>
-      <a id="kakao-link-btn" href="javascript:;">
-        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
+      <a href="#" onclick=twitter();>gg
+        <img src="twitter.png" width="70px" height="70px">
+      </a>
+      <a href="#" onclick="copyLink('sv2iin.github.io');">링크 복사
+        <img src="urllink.jpg">
+      </a>
+      <a id="kakao-link-btn" href="kakao();">
+        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" width="70px" height="70px" />
       </a>
     </div>
   </section>
@@ -246,6 +250,42 @@
       var url = 'sv2iin.github.io?no=' + no; //show_detail.html
       var turl = "http://twitter.com/share?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text);
       window.open(turl, 'twitter', 'width=626,height=436');
+    }
+
+    function kakao() {
+      Kakao.init("c44121eba214234a14206c56e25ef933"); // 사용할 앱의 JavaScript 키를 설정
+      Kakao.Link.sendDefault({
+        objectType: "feed",
+        content: {
+          title: "함 해봐" // 콘텐츠의 타이틀
+            ,
+          description: "해봐고" // 콘텐츠 상세설명
+            ,
+          imageUrl: "boss2.jpg" // 썸네일 이미지
+            ,
+          link: {
+            mobileWebUrl: "http://sv2iin.github.io" // 모바일 카카오톡에서 사용하는 웹 링크 URL
+              ,
+            webUrl: "http://sv2iin.github.io" // PC버전 카카오톡에서 사용하는 웹 링크 URL
+          }
+        },
+        social: {
+          likeCount: 50 // LIKE 개수
+            ,
+          commentCount: 120 // 댓글 개수
+            ,
+          sharedCount: 1858821 // 공유 회수
+        },
+        buttons: [{
+          title: "하러 가기!" // 버튼 제목
+            ,
+          link: {
+            mobileWebUrl: "http://sv2iin.github.io" // 모바일 카카오톡에서 사용하는 웹 링크 URL
+              ,
+            webUrl: "http://sv2iin.github.io" // PC버전 카카오톡에서 사용하는 웹 링크 URL
+          }
+        }]
+      });
     }
 
     $('.Ans').click(function() {
