@@ -92,9 +92,8 @@
   }
 
   footer {
-    position: fixed;
+    position: relative;
     bottom: 0px;
-    height: 20%;
     width: 100%;
     background: pink;
     color: white;
@@ -137,7 +136,7 @@
 
       <!--이름 넣을까 말까-->
 
-      <button class="start_btn_" id="start_btn" onclick=displayset()>START</button>
+      <button class="start_btn_" id="start_btn" onclick=startFunc();>START</button>
 
       <ul id=question_details>
         <li id='ff'>
@@ -243,8 +242,8 @@
       <a id="kakao-link-btn" onclick=kakao(); style="cursor:pointer">
         <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" width="70px" height="70px" value="sv2iin.github.io" />
       </a>
+      </br></br>
     </div>
-
   </footer>
   <!-- Footer 끝-->
 
@@ -265,7 +264,7 @@
     $('#result').children().hide();
     //$('#share').hide();
 
-    function displayset() {
+    function startFunc() {
       $('#start_btn').hide();
       $('#ff').show();
     }
