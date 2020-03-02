@@ -88,7 +88,16 @@
   }
 
   li {
-    display: none;
+    list-style: none;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0px;
+    height: 20%;
+    width: 100%;
+    background: pink;
+    color: white;
   }
 </style>
 
@@ -128,7 +137,7 @@
 
       <!--이름 넣을까 말까-->
 
-      <button type="button" class="start_btn_" id="start_btn" onclick=displayset()>START</button>
+      <button class="start_btn_" id="start_btn" onclick=displayset()>START</button>
 
       <ul id=question_details>
         <li id='ff'>
@@ -206,25 +215,39 @@
 
     <div id='result' class="text-center">
       <div id='end'>ㅅㄱ 끝남~!!</div><br>
+
       <div id='s0'>0...ㅠ</div>
       <div id='s10'>10 엄마상어</div>
       <div id='s50'>50 아기상어</div>
       <div id='s90'>90 분발</div>
       <div id='s100'>100 짱이네요</div>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <section class="copyright py-4 text-center text-black">
+      <div class="container">
+        <small>Copyright &copy; sv2iin.github.io </small>
+      </div>
+    </section>
 
     <div id="share" class="text-center">
-      <a href="#" onclick=twitter();>gg
+      <b>공유하기</b></br></br>
+      <a onclick=twitter(); style="cursor:pointer">
         <img src="twitter.png" width="70px" height="70px">
       </a>
-      <a onClick="javascript:window.clipboardData.setData('Text', location.href);alert('주소가 복사되었습니다.\n\원하는 곳에 ctrl + v 하세요.');" style="cursor:pointer">
-        <img src="url.png" width="70px" height="70px">
+      <a onClick=urlcopy(); style="cursor:pointer">
+        <img src="url.png" width="70px" height="70px" id='urlimg'>
       </a>
-      <a id="kakao-link-btn" onclick=kakao();>
-        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" width="70px" height="70px" />
+      <a id="kakao-link-btn" onclick=kakao(); style="cursor:pointer">
+        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" width="70px" height="70px" value="sv2iin.github.io" />
       </a>
     </div>
-  </section>
+
+  </footer>
+  <!-- Footer 끝-->
+
 
 
   <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -232,12 +255,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script src="./js/clipboard.min.js"></script>
+  <script src="./js/copy2clipboard.js"></script>
+
   <script type="text/javascript">
     var score = 0;
     var page = 0;
     $('#question_details').children().hide();
     $('#result').children().hide();
-    $('#share').hide();
+    //$('#share').hide();
 
     function displayset() {
       $('#start_btn').hide();
@@ -288,6 +314,18 @@
         }]
       });
       //]]>
+    }
+
+    function urlcopy() {
+      $('#urlimg').val("sv2viin.github.io");
+      $('#urlimg').select();
+      try {
+        var successful = document.execCommand('copy');
+        alert('주소가 복사되었습니다.\n\원하는 곳에 ctrl + v 하세요.');
+      } catch (error) {
+        alert('이 브라우저는 지원하지 않습니다.');
+      }
+      $('#urlimg').blur();
     }
 
     $('.Ans').click(function() {
